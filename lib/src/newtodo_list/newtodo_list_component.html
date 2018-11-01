@@ -1,31 +1,15 @@
 <!-- Components info: https://webdev.dartlang.org/components -->
-<div>
-  <material-input label="What do you need to do?"
-                  autoFocus floatingLabel style="width:80%"
-                  [(ngModel)]="newTodo"
-                  (keyup.enter)="add()">
-  </material-input>
+<material-button class="name" (trigger)="add()">
+  <div class="text">点名</div>
+</material-button>
 
-  <material-fab mini raised
-                (trigger)="add()"
-                [disabled]="newTodo.isEmpty">
-    <material-icon icon="add"></material-icon>
-  </material-fab>
-</div>
-
-<p *ngIf="items.isEmpty">
-  Nothing to do! Add items above.
-</p>
-
-<div *ngIf="items.isNotEmpty">
-  <ul>
-      <li *ngFor="let item of items; let i=index">
-        <material-checkbox #done materialTooltip="Mark item as done">
-        </material-checkbox>
-        <span [class.done]="done.checked">{{item}}</span>
-        <material-fab mini (trigger)="remove(i)">
-          <material-icon icon="delete"></material-icon>
-        </material-fab>
-      </li>
-  </ul>
-</div>
+      
+    
+      <section layout="column" layout-align="start center">
+          <p>
+              
+              <div style="outline: dashed #009ddc">
+                  <h1><div id="text_id" >请同学回答。</div></h1>
+              </div>
+          </p>
+        </section>

@@ -9,7 +9,7 @@ import 'src/newtodo_list/newtodo_list_component.dart';
   selector: 'my-app',
   styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [TodoListComponent,NewTodoListComponent],
+  directives: [NewTodoListComponent],
 )
 
 class AppComponent {

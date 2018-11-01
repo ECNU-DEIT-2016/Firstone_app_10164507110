@@ -23,3 +23,19 @@ li material-fab {
 .done {
   text-decoration: line-through;
 }
+.name{
+  position: relative;
+  padding: 4px 8px;
+  background-color: rgba(0, 188, 212,1);
+  color: #fff;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  transition: background-color 200ms;
+  cursor: pointer;
+  overflow: hidden;
+
+}
+.text{
+  position: relative;
+  z-index: 2;
+}
