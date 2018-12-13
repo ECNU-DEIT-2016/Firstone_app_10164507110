@@ -1,6 +1,6 @@
 import 'my_server.dart';
 import 'dart:math';
-
+import 'package:sqljocky5/sqljocky.dart';
 /// This type initializes an application.
 ///
 /// Override methods in this class to set up routes and initialize services like
@@ -37,7 +37,7 @@ class MyServerChannel extends ApplicationChannel {
   }
 }
 class MyController extends ResourceController {
-  final List<String> things = ['张静雅','唐莉雯','龙晶毅','吴松二','蔡心蕊','李典康','周嘉翔','戚晓颖','郑可欣','陈瑶','赵世宇','朱子恒'];
+  final List<String> things = ['zjy','tlw','ljy','wse','cxr','ldk','zjx','qxy','zkx','cy','zsy','zzh'];
  static var random = Random();
   var number=random.nextInt(12);
 
@@ -53,4 +53,19 @@ class MyController extends ResourceController {
     }
     return Response.ok(things[id]);
   }
+  Future connect(List<String> names) async{
+  var s = ConnectionSettings(
+    user: "deit2016",
+    password: "deit2016@ecnu",
+    host: "www.muedu.org",
+    port: 3306,
+    db: "deit2016db_10164507110",
+  );
+    print("openning connection......");
+  var conn = await MySqlConnection.connect(s);
+  print("opened......");
+  Results result =
+      await conn.execute('SELECT sid,sname, FROM stu_infor');
+  result.forEach( (f) => names.add(f.toString()) );
+}
 }
