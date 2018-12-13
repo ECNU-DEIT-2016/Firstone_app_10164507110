@@ -1,5 +1,6 @@
 import 'my_server.dart';
 import 'dart:math';
+
 /// This type initializes an application.
 ///
 /// Override methods in this class to set up routes and initialize services like
@@ -37,8 +38,9 @@ class MyServerChannel extends ApplicationChannel {
 }
 class MyController extends ResourceController {
   final List<String> things = ['张静雅','唐莉雯','龙晶毅','吴松二','蔡心蕊','李典康','周嘉翔','戚晓颖','郑可欣','陈瑶','赵世宇','朱子恒'];
-var random = Random();
+ static var random = Random();
   var number=random.nextInt(12);
+
   @Operation.get()
   Future<Response> getThings() async {
     return Response.ok(things[number]);
